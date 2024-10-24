@@ -33,7 +33,7 @@ function AdminDashboard() {
           <Card className="text-center">
             <Card.Body>
               <Card.Title>Total of Product</Card.Title>
-              <Card.Text>500</Card.Text>
+              <Card.Text>6</Card.Text>
             </Card.Body>
           </Card>
         </Col>
@@ -41,7 +41,7 @@ function AdminDashboard() {
           <Card className="text-center">
             <Card.Body>
               <Card.Title>Total of Order</Card.Title>
-              <Card.Text>120</Card.Text>
+              <Card.Text>3</Card.Text>
             </Card.Body>
           </Card>
         </Col>
@@ -49,7 +49,7 @@ function AdminDashboard() {
           <Card className="text-center">
             <Card.Body>
               <Card.Title>News</Card.Title>
-              <Card.Text>25</Card.Text>
+              <Card.Text>4</Card.Text>
             </Card.Body>
           </Card>
         </Col>

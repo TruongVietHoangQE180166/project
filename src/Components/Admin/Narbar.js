@@ -1,9 +1,15 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 
 function AdminNavbar() {
-  return (
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+
+      navigate('/');
+    };
+    return (
     <div style={{ 
         width: '200px', 
         height: '100vh', 
@@ -20,6 +26,10 @@ function AdminNavbar() {
           <Nav.Link as={Link} to="/admin/products" style={{ color: 'white' }}>Product Manage</Nav.Link>
           <Nav.Link as={Link} to="/admin/orders" style={{ color: 'white' }}>Order Manage</Nav.Link>
           <Nav.Link as={Link} to="/admin/news" style={{ color: 'white' }}>New</Nav.Link>
+          <Button variant="outline-light" onClick={handleLogout} className="mt-3">
+          Log Out
+        </Button>
+      
         </Nav>
       </div>
     
