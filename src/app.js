@@ -21,7 +21,7 @@ import AdminDashboard from './Components/Admin/AdminDashboard'; // Import các t
 import ProductManage from './Components/Admin/ProductManage';
 import OrderManage from './Components/Admin/OrderManage';
 import NewsManage from './Components/Admin/NewsManage';
-
+import OrderHistory from './Components/OrderHistory';
 function App() {
   return (
     <Router>
@@ -81,7 +81,7 @@ function App() {
             </>
           }
         />
-        <Route 
+        <Route
           path="/products/:id" // New route for product details
           element={
             <>
@@ -89,7 +89,18 @@ function App() {
               <ProductDetail />
               <WebFooter />
             </>
-          } 
+          }
+
+        />
+        <Route
+          path="/order-history"
+          element={
+            <>
+              <Header />
+              <OrderHistory />
+              <WebFooter />
+            </>
+          }
         />
         {/* Route for Admin Dashboard, without Header and Footer */}
         <Route path="/admin" element={<AdminPage />}>
