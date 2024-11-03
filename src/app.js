@@ -19,7 +19,7 @@ import AdminDashboard from './Components/Admin/AdminDashboard'; // Import các t
 import ProductManage from './Components/Admin/ProductManage';
 import OrderManage from './Components/Admin/OrderManage';
 import NewsManage from './Components/Admin/NewsManage';
-import PrivateRoute from './Components/PrivateRoute';
+
 
 function App() {
   return (

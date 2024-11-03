@@ -25,7 +25,7 @@ function AdminNavbar() {
           <Nav.Link as={Link} to="/admin" style={{ color: 'white' }}>Dashboard</Nav.Link>
           <Nav.Link as={Link} to="/admin/products" style={{ color: 'white' }}>Product Manage</Nav.Link>
           <Nav.Link as={Link} to="/admin/orders" style={{ color: 'white' }}>Order Manage</Nav.Link>
-          <Nav.Link as={Link} to="/admin/news" style={{ color: 'white' }}>New</Nav.Link>
+          <Nav.Link as={Link} to="/admin/news" style={{ color: 'white' }}>New Manage</Nav.Link>
           <Button variant="outline-light" onClick={handleLogout} className="mt-3">
           Log Out
         </Button>
