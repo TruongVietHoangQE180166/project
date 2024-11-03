@@ -14,18 +14,24 @@ import Products from './Components/Products';
 import News from './Components/News';
 import Contact from './Components/Contact';
 import About from './Components/About';
+import ProductDetail from './Components/ProductDetail'; // Import ProductDetail
+import PrivateRoute from './Components/PrivateRoute';
 import AdminPage from './Components/Admin/AdminPage';
 import AdminDashboard from './Components/Admin/AdminDashboard'; // Import các trang quản lý
 import ProductManage from './Components/Admin/ProductManage';
 import OrderManage from './Components/Admin/OrderManage';
 import NewsManage from './Components/Admin/NewsManage';
+<<<<<<< HEAD
 
 
+=======
+import OrderHistory from './Components/OrderHistory';
+>>>>>>> 4f808ed9e1a549e9cab73426a4144b4b44ce0d30
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Các route với Header và Footer */}
+        {/* Routes with Header and Footer */}
         <Route
           path="/"
           element={
@@ -55,7 +61,6 @@ function App() {
           element={
             <>
               <Header />
-              
               <News />
               <WebFooter />
             </>
@@ -81,8 +86,28 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/products/:id" // New route for product details
+          element={
+            <>
+              <Header />
+              <ProductDetail />
+              <WebFooter />
+            </>
+          }
 
-        {/* Route cho Admin Dashboard, không có Header và Footer */}
+        />
+        <Route
+          path="/order-history"
+          element={
+            <>
+              <Header />
+              <OrderHistory />
+              <WebFooter />
+            </>
+          }
+        />
+        {/* Route for Admin Dashboard, without Header and Footer */}
         <Route path="/admin" element={<AdminPage />}>
           <Route index element={<AdminDashboard />} /> {/* Mặc định là Dashboard */}
           <Route path="products" element={<ProductManage />} />

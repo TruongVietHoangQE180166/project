@@ -2,17 +2,18 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Form, FormControl, Button, NavDropdown, Badge, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; // Import Link từ react-router-dom
-import '../Style/Header.css'; 
+import '../Style/Header.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginComponent from "./LoginComponent";
 import RegisterComponent from "./RegisterComponent";
-import { FaUser } from 'react-icons/fa'; 
+import { FaUser } from 'react-icons/fa';
+import OrderHistoryModal from './OrderHistory';
 
 function Header() {
   const [showModal, setShowModal] = useState(false);
   const [isLoginForm, setIsLoginForm] = useState(true);
   const [user, setUser] = useState(null);
-
+  const [showOrderHistoryModal, setShowOrderHistoryModal] = useState(false);  // Modal cho Order History
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -43,6 +44,13 @@ function Header() {
 
   const switchForm = () => {
     setIsLoginForm(!isLoginForm);
+  };
+  const openOrderHistoryModal = () => {
+    setShowOrderHistoryModal(true);  // Mở modal Order History
+  };
+
+  const closeOrderHistoryModal = () => {
+    setShowOrderHistoryModal(false); // Đóng modal Order History
   };
 
   return (
@@ -95,7 +103,7 @@ function Header() {
                       className="ms-4"
                     >
                       <NavDropdown.Item href="#">My Profile</NavDropdown.Item>
-                      <NavDropdown.Item href="#">Order History</NavDropdown.Item>
+                      <NavDropdown.Item onClick={openOrderHistoryModal}>Order History</NavDropdown.Item>
                       {user.role === "admin" && (
                         <NavDropdown.Item href="/admin">Admin Dashboard</NavDropdown.Item>
                       )}
@@ -131,7 +139,7 @@ function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
+      <OrderHistoryModal show={showOrderHistoryModal} handleClose={closeOrderHistoryModal} />
       {isLoginForm ? (
         <LoginComponent
           modalOpen={showModal}
